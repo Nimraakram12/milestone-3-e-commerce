@@ -4,7 +4,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { FaShoppingCart } from "react-icons/fa";
 import { FiX } from "react-icons/fi";
-import { MdMenuBook } from "react-icons/md";
+import { MdMenu } from "react-icons/md";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,7 +68,7 @@ export default function Navbar() {
           aria-label="toggle menu"
           className="text-black hover:text-cyan-700 md:hidden"
         >
-          {isOpen ? <FiX size={28} /> : <MdMenuBook size={28} />}
+          {isOpen ? <FiX size={28} /> : <MdMenu size={28} />}
         </button>
       </div>
 
