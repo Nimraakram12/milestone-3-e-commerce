@@ -7,12 +7,13 @@ import {
   ReactNode,
 } from "react";
 import { Books } from "../_lib/data";
+// import { StaticImport } from "next/image";
 
 interface Cart extends Books {
-  price: ReactNode;
-  description: ReactNode;
+  price: number;
+  description: string;
   title: string;
-  image: string | StaticImport;
+  image: string ;
   quantity: number;
 }
 interface cartContextType {
