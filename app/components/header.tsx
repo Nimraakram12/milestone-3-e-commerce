@@ -11,19 +11,25 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-bg/50 md:bg-black top-0 z-10 sticky mt-0 p-4 flex justify-between items-center shadow-2xl">
-      {/* Shopping Cart Icon */}
-      <div className="flex-none w-14">
-        <Link href="/cart">
-          <FaShoppingCart className="text-black md:text-amber-200 text-2xl hover:text-cyan-600" />
-        </Link>
+    <nav className="bg-bg/50 md:bg-gray-400 top-0 z-10 sticky mt-0 p-4 flex justify-between items-center shadow-2xl">
+      {/* Logo and Website Name */}
+      <div className="flex items-center space-x-4">
+        {/* Website Name */}
+        <h1 className="text-2xl font-bold text-blue-950">TickVault</h1>
+
+        {/* Shopping Cart Icon */}
+        <div className="flex-none w-14">
+          <Link href="/cart">
+            <FaShoppingCart className="text-black md:text-blue-950 text-2xl hover:text-cyan-600" />
+          </Link>
+        </div>
       </div>
 
       {/* Navigation Links */}
       <div className="hidden md:flex md:w-64 md:justify-end md:space-x-4">
         <Link
           href="/"
-          className={`text-amber-200 text-lg ${
+          className={`text-blue-950 text-lg ${
             pathname === "/" ? "text-black bg-white px-1 rounded-full" : ""
           } hover:text-cyan-600`}
         >
@@ -31,7 +37,7 @@ export default function Navbar() {
         </Link>
         <Link
           href="/contact"
-          className={`text-amber-200 text-lg ${
+          className={`text-blue-950 text-lg ${
             pathname === "/contact" ? "text-black bg-white px-1 rounded-full" : ""
           } hover:text-cyan-600`}
         >
@@ -39,7 +45,7 @@ export default function Navbar() {
         </Link>
         <Link
           href="/product"
-          className={`text-amber-200 text-lg ${
+          className={`text-blue-950 text-lg ${
             pathname === "/product" ? "text-black bg-white px-1 rounded-full" : ""
           } hover:text-cyan-600`}
         >
@@ -47,7 +53,7 @@ export default function Navbar() {
         </Link>
         <Link
           href="/about"
-          className={`text-amber-200 text-lg ${
+          className={`text-blue-950 text-lg ${
             pathname === "/about" ? "text-black bg-white px-1 rounded-full" : ""
           } hover:text-cyan-600`}
         >

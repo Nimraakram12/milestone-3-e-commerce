@@ -29,9 +29,9 @@ function ProductCard({ title, id, image, price }: CardProps) {
         ))}
         <div className="flex-grow mt-8">
           <h2 className="text-sm sm:text-md md:text-lg font-semibold text-gray-950 m-2">{title}</h2>
-          <p className="m-2 text-gray-800">${price}</p>
+          <p className="m-2 text-blue-950">${price}</p>
         </div>
-        <div className="mt-4">view product</div>
+        <div className="mt-4 text-black font-bold">view product</div>
       </Link>
     </div>
   );

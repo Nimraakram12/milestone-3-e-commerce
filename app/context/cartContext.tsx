@@ -9,6 +9,10 @@ import {
 import { Books } from "../_lib/data";
 
 interface Cart extends Books {
+  price: ReactNode;
+  description: ReactNode;
+  title: string;
+  image: string | StaticImport;
   quantity: number;
 }
 interface cartContextType {

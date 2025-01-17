@@ -4,25 +4,25 @@ import React, { useState, FormEvent , ChangeEvent} from "react";
 interface FormType {
   fullName:string,
   email:string,
-  subject:string,
+  feedback:string,
   message:string
 }
 interface ErrorType {
   fullName:string,
   email:string,
-  subject:string,
+  feedback:string,
   message:string
 }
 export default function ContactCard() {
-  const [formData , setFormData] = useState<FormType>({fullName:"",email:"",subject:"",message:""})
-  const [error , setError] = useState<ErrorType>({fullName:"",email:"",subject:"",message:""})
+  const [formData , setFormData] = useState<FormType>({fullName:"",email:"",feedback:"",message:""})
+  const [error , setError] = useState<ErrorType>({fullName:"",email:"",feedback:"",message:""})
 
   //form logic
   const validateForm = ()=>{
     const formErrors:FormType = {
       fullName: "",
       email: "",
-      subject: "",
+      feedback: "",
       message: ""
     }
     if(!formData.fullName){
@@ -34,8 +34,8 @@ export default function ContactCard() {
       formErrors.email = "Email address is required";
     }
 
-    if(!formData.subject){
-      formErrors.subject = "subject is required";
+    if(!formData.feedback){
+      formErrors.feedback = "feedback is required";
     }
 
     if(!formData.message){
@@ -55,7 +55,7 @@ export default function ContactCard() {
       console.log("Form Submitted Succesfully", formData)
 
       //clear form after submission
-      setFormData({fullName:"",email:"",subject:"",message:""})
+      setFormData({fullName:"",email:"",feedback:"",message:""})
     }
   }
 
@@ -78,18 +78,21 @@ export default function ContactCard() {
           {/* Text Section */}
           <div className="flex-1 p-5 mb-10 md:mb-0 md:pr-12">
             <h1 className="text-4xl md:text-5xl font-medium leading-tight  hover:text-amber-700">
-              Discover the Best
+              Introduce the Best
             </h1>
             <h1 className="text-4xl mt-2 md:text-5xl font-medium text-blue-950 leading-tight">
-              Tech Books for You
+              Best Watches for You To Enhace Your Style
             </h1>
-            <p className="text-gray-500 mt-11">
-              At TechBookStore, we offer a wide range of tech-related books for
-              all skill levels. Whether you&#39;re a beginner looking to learn
-              the basics or a professional seeking advanced knowledge, we have
-              the right book for you.
+            <p className="text-blue-950 mt-11">
+              we believe that a watch is more than just a timepiece it’s a symbol of
+              style, precision, and individuality. Our mission is to curate an 
+              exceptional collection of watches that cater to every taste,
+              occasion, and lifestyle. From timeless classics to innovative 
+              smartwatches, we offer a diverse range of designs that blend 
+              functionality with elegance.
+            
             </p>
-            <p className="text-gray-500 mt-4">
+            <p className="text-blue-950 mt-4">
               Join us today to explore our collection and find the perfect
               resource to elevate your tech skills. Sign up now and get
               exclusive deals!
@@ -124,15 +127,15 @@ export default function ContactCard() {
               />
             </div>
 
-            {/* Subject */}
+            {/* feedback */}
             <div className="mb-4">
-              <label className="block mb-2 text-gray-700">Subject</label>
+              <label className="block mb-2 text-gray-700">Feedback</label>
               <input
                 type="text"
-                name="subject"
-                value={formData.subject}
+                name="feedback"
+                value={formData.feedback}
                 onChange={handleChange}
-                placeholder="Subject"
+                placeholder="feedback"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
